@@ -18,12 +18,15 @@ class BubbleSort{
     }
     bubbleSort(){
         let array = this.arr;
+        let needNextPass = true;
         for (let i = 1; i < array.length; i++) {
+            needNextPass = false;
             for (let j = 0; j < array.length - i; j++) {
                 if (array[j] > array[j+1]){
                     let swap = array[j];
                     array[j] = array[j+1];
                     array[j+1] = swap;
+                    needNextPass = true;
                 }
             }
         }
